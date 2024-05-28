@@ -1,0 +1,9 @@
+@import url("./root.css");
+
+html, body{
+    background-color: var(--background);
+}
+
+div.viewport{
+
+}
