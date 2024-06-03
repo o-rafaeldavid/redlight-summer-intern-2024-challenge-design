@@ -1,0 +1,68 @@
+#especialidades > ul{
+    position: relative;
+    display: flex;
+
+    padding: 0 9rem;
+    box-sizing: border-box;
+
+    flex-wrap: wrap;
+    row-gap: 6rem;
+}
+
+#especialidades > ul::-webkit-scrollbar{
+    all: unset;
+}
+
+    #especialidades > ul > li{
+        position: relative;
+        display: flex;
+
+        vertical-align: top;
+        flex-direction: column;
+    }
+
+    #especialidades > ul > li.three{
+        flex: 1 1 calc(100% / 3);
+    }
+
+    #especialidades > ul > li.three.marginTop{
+        margin-top: 8rem;
+    }
+
+    #especialidades > ul > li.two{
+        flex: 1 1 50%;
+    }
+
+        #especialidades > ul > li > div{
+            position: relative;
+            margin-bottom: 4rem;
+
+            aspect-ratio: 1 / 1;
+            height: 20rem;
+
+            /* background-color: red; */
+        }
+        
+            #especialidades > ul > li > div > img{
+                height: 70%;
+
+                position: absolute;
+                top: 50%; left: 50%;
+                translate: -50% -50%;
+            }
+
+            #especialidades > ul > li > div > section.svgSection{
+                width: 100%;
+                height: 100%;
+
+                position: relative;
+            }
+
+                #especialidades > ul > li > div > section.svgSection > svg{
+                    min-height: unset;
+                    min-width: unset;
+                    max-height: 100%;
+                    max-width: 100%;
+
+                    position: relative;
+                }

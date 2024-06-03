@@ -4,11 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traçadinha Coimbra</title>
-
     <!-- styles -->
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/vp0.css">
+    <link rel="stylesheet" href="style/historia.css">
+    <link rel="stylesheet" href="style/especialidades.css">
+    <link rel="stylesheet" href="style/cozinha.css">
+    <link rel="stylesheet" href="style/contacto.css">
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!--  --> <link rel="stylesheet" href="style/fonts/merriweather.css">
 </head>
 <body>
+    <div id="info" class="viewport">
+        <div class="wholeSpace"></div>
+        <section>
+            <p class="centerText merriweather-regular-italic laranja-amarelo">
+                informação
+            </p>
+            <p class="centerText lipsum-small"></p>
+        </section>
+    </div>
+    <script>
+        const infoSection = info.querySelector(":scope > section")
+        const infoParagraph = infoSection.querySelector(":scope > p:last-of-type")
+        let lastEnterElement = null
+        let lastText = null
+
+        const showInfo = (enterElement, text) => {
+            lastEnterElement = enterElement;
+            lastText = text;
+            infoSection.style.transition = ""
+
+            const parentElementBounds = enterElement.parentElement.getBoundingClientRect()
+            const infoSectionBounds = infoSection.getBoundingClientRect()
+            console.log(parentElementBounds)
+
+            infoSection.style.left = (parentElementBounds.left + parentElementBounds.width * 0.5) + "px"
+
+            if(window.innerHeight - parentElementBounds.bottom > infoSectionBounds.height){
+                infoSection.style.top = parentElementBounds.bottom + "px"
+            }
+            else{
+                infoSection.style.top = parentElementBounds.top - infoSectionBounds.height + "px"
+            }
+
+            infoParagraph.innerText = text
+
+            infoSection.style.transition = "top 100ms, left 100ms"
+        }
+
+        document.addEventListener("wheel", () =>
+            setTimeout(() => {if(lastEnterElement != null && lastText != null) showInfo(lastEnterElement, lastText)}, 120)
+        )
+    </script>
+    <!-- header -->
+    <header>
+        <nav>
+            <ul class="gridCol2">
+                <li><a class="overflow-visible" href="#historia">Uma História</a></li>
+                <li><a class="overflow-visible" href="#especialidades">Especialidades</a></li>
+            </ul>
+            <img alt="Traçadinha Coimbra Logo" src="./assets/imgs/tracadinha-logo.svg">
+            <ul class="gridCol2">
+                <li><a class="overflow-visible" href="#cozinha">A Alma da Cozinha</a></li>
+                <li><a class="overflow-visible" href="#contacto">Conheça-nos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- first viewport -->
+    <div class="viewport" id="vp0">
+        <img class="wholeSpace centered" alt="" src="./assets/imgs/vp0/slate_board.png">
+
+        <span class="merriweather-regular-italic">o espírito nortenho</span>
+        <span class="merriweather-regular-italic"><br><br>no coração de Coimbra</span>
+        
+        <img class="wholeSpace centered" alt="" src="./assets/imgs/vp0/mesa.png">
+        <img class="wholeSpace centered" alt="" src="./assets/imgs/vp0/francesinha.png">
+
+        <section class="svgSection vp0-coimbra_silhueta"></section>
+        <div></div>
+    </div>
+    <!-- historia viewport -->
+    <div class="viewport withMargin" id="historia">
+        <div class="gridCol2">
+            <div>
+                <h1>Uma História</h1>
+                <p class="merriweather-regular-italic laranja-amarelo">
+                    o boémio começo da francesinha conimbricense...
+                </p>
+                <p class="lipsum"></p>
+            </div>
+            <div>
+                <section class="svgSection historia-coimbraAbstract"></section>
+                <img alt="" src="./assets/imgs/historia/francesinha-molho.png">
+            </div>
+        </div>
+    </div>
+    <!-- especialidades viewport -->
+    <div class="viewport dynamic paddingBottom overflow-visible" id="especialidades">
+        <div class="centerText">
+            <h1>Especialidades</h1>
+            <p class="merriweather-regular-italic laranja-amarelo doubleMargin">
+                hmm... tão bom para comer tão pouco...
+            </p>
+        </div>
+        <ul class="overflow-visible">
+            <!-- código gerado em ./js/especialidadesList.js -->
+        </ul>
+    </div>
+    <!-- cozinha viewport -->
+    <div class="viewport dynamic withMargin paddingBottom" id="cozinha">
+        <div class="centerText">
+            <h1>A Alma da Cozinha</h1>
+            <p class="merriweather-regular-italic laranja-amarelo doubleMargin">
+                ???
+            </p>
+        </div>
+        <div class="gridCol2">
+            <div class="toOpacityInfo">
+                <h2>Tozé Coimbra</h2>
+                <p class="merriweather-regular-italic laranja-amarelo">
+                    chef de cuisine
+                </p>
+                <p class="lipsum-small"></p>
+            </div>
+            <div id="cheffCuisine" class="infoElement">
+                <img alt="" src="./assets/imgs/cozinha/cheff0.png" class="laranja-amarelo">
+                <img alt="" src="./assets/imgs/cozinha/cheff0.png" class="notabsolute">
+                <section class="svgSection cozinha-cozinha_abstract_0"></section>
+            </div>
+        </div>
+        <ul class="overflow-visible">
+            <!-- código gerado em ./js/cozinhaList.js -->
+        </ul>
+    </div>
+    <!-- contacto viewport -->
+    <div class="viewport withMargin" id="contacto">
+        <div class="gridCol2 wholeSpace">
+            <div>
+                <h1>Conheça-nos!</h1>
+                <p class="merriweather-regular-italic laranja-amarelo doubleMargin">
+                    uma experiência única na boémia cidade...
+                </p>
+                <script>
+                    const showFormulario = () => {
+                        contactosLista.style.left = "-100%"
+                        formulario.style.left = "0"
+                    }
+                    const showContactosLista = () => {
+                        contactosLista.style.left = ""
+                        formulario.style.left = "100%"
+                    }
+                </script>
+                <section>
+                    <div id="contactosLista">
+                        <table>
+                            <tr>
+                                <td class="centerTD"><img src="./assets/imgs/contacto/phone.svg" alt=""></td>
+                                <td><a href="tel:+351123456789"><p>+351 123 456 789</p></a></td>
+                            </tr>
+                            <tr>
+                                <td class="centerTD"><img src="./assets/imgs/contacto/email.svg" alt=""></td>
+                                <td><a href="mailto:contacto@tracadinha.com"><p>contacto@tracadinha.com</p></a></td>
+                            </tr>
+                            <tr>
+                                <td class="centerTD"><img src="./assets/imgs/contacto/pin.svg" alt=""></td>
+                                <td><a href="http://maps.google.com/?q=Rua de algures, nº00, Coimbra, Coimbra" target="_blank"><p>Rua de algures, nº00, Coimbra, Coimbra</p></a></td>
+                            </tr>
+                        </table>
+                        <button
+                            class="borderRect"
+                            style="margin-top: 2rem;"
+                            onclick="showFormulario()"
+                        >
+                            Preencher Formulário
+                        </button>
+                    </div>
+                    <form id="formulario" action="#">
+                        <input class="borderRect tres" type="text" required placeholder="Primeiro Nome">
+                        <input class="borderRect tres" type="text" required placeholder="Último Nome">
+                        <input class="borderRect seis" type="email" required placeholder="O seu email">
+                        <textarea class="borderRect seis" required placeholder="Mensagem..."></textarea>
+                        <button
+                            type="submit"
+                            class="borderRect dois"
+                        >
+                            Contactar!
+                        </button>
+                        <div></div>
+                        <button
+                            type="button"
+                            class="tres"
+                            id="voltarContactos"
+                            onclick="showContactosLista()"
+                        >
+                            Voltar aos Contactos
+                        </button>
+                    </form>
+                </section>
+            </div>
+            <div>
+                <span class="merriweather-regular-italic">o espírito nortenho</span>
+                <span class="merriweather-regular-italic"><br><br>no coração de Coimbra</span>
+                <img alt="" src="./assets/imgs/contacto/francesinha-shadow.png">
+            </div>
+        </div>
+    </div>
+    <!-- js scripts -->
+    <script src="./js/checkViewport.js"></script>
+    <script src="./js/lipsumGenerator.js"></script>
+    <script src="./js/especialidadesList.js"></script>
+    <script src="./js/cozinhaList.js"></script>
+    <script src="./js/loadSVGs.js"></script>
     
 </body>
 </html>

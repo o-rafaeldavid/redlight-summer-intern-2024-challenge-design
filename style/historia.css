@@ -1,0 +1,66 @@
+#historia h1{
+    margin-top: 5rem;
+}
+
+/*  */
+#historia section.svgSection{
+    height: 40rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+
+    filter: drop-shadow(var(--laranja) 2rem 2rem 0);
+}
+
+    #historia section.svgSection > svg{
+        min-width: unset;
+        min-height: unset;
+        height: 100%;
+
+        left: unset;
+        right: 0;
+        translate: none;
+    }
+
+    #historia section.svgSection > svg path{
+        fill: var(--laranja-amarelo);
+    }
+
+@media (max-height: 850px) {
+    #historia section.svgSection{
+        height: 35rem;
+    }
+}
+
+@media (max-height: 760px) {
+    #historia section.svgSection{
+        height: 30rem;
+    }
+}
+
+/*  */
+#historia div:has(section.svgSection){
+    position: relative;
+}
+
+    #historia div:has(section.svgSection) > img{
+        width: 32rem;
+
+        position: absolute;
+        top: 55%; right: 3rem;
+        translate: 0 -50%;
+
+        filter: drop-shadow(var(--background) 2rem 2rem 0);
+    }
+
+    
+@media (max-height: 850px) {
+    #historia div:has(section.svgSection) > img{
+        width: 28rem;
+    }
+}
+
+@media (max-height: 760px) {
+    #historia div:has(section.svgSection) > img{
+        width: 24rem;
+    }
+}

@@ -1,3 +1,7 @@
 :root{
-    --background: #141414;
+    --background: rgb(21, 21, 21);
+    --background-zero: rgba(21, 21, 21, 0);
+
+    --laranja-amarelo: rgb(255, 140, 0);
+    --laranja: rgb(255, 77, 0);
 }

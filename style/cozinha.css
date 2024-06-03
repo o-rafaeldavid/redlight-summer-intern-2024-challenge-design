@@ -1,0 +1,85 @@
+#cozinha h2{
+    margin-top: 5rem;
+}
+
+div:has(#cheffCuisine){
+    position: relative;
+}
+
+#cheffCuisine{
+    position: relative;
+}
+
+    #cheffCuisine > img{
+        height: 37rem;
+        padding-bottom: 3rem;
+    }
+
+    #cheffCuisine > img.notabsolute{
+        opacity: 0;
+    }
+
+    #cheffCuisine > img:not(.notabsolute),
+    #cheffCuisine > section.svgSection{
+        position: absolute;
+        bottom: 0;
+        translate: -50% 0;
+    }
+
+    #cheffCuisine > img:not(.notabsolute){
+        left: 45%;
+        bottom: 0.5rem;
+    }
+
+    #cheffCuisine > section.svgSection {
+        width: 100%;
+        height: 10em;
+
+        left: 50%;
+    }
+
+#cozinha > ul{
+    position: relative;
+
+    margin-top: 6rem;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+    #cozinha > ul > li{
+        position: relative;
+    }
+
+    #cozinha > ul > li > div{
+        width: 100%; height: 30rem;
+        position: relative;
+    }
+        #cozinha > ul > li > h3{
+            margin-top: 2rem;
+        }
+
+        #cozinha > ul > li > div > img{
+            height: 100%;
+
+            padding-bottom: 5rem;
+
+            box-sizing: border-box
+        }
+
+        #cozinha > ul > li > div > section.svgSection{
+            width: 100%;
+            height: 10rem;
+
+            position: absolute;
+            bottom: 0;
+        }
+
+            #cozinha > ul > li > div > section.svgSection > svg{
+                min-width: unset;
+                width: 100%;
+            }
+
+                #cozinha > ul > li > div > section.svgSection > svg *{
+                    fill: var(--laranja-amarelo);
+                }
