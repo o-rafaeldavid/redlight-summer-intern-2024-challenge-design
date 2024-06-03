@@ -3,6 +3,8 @@
     line-height: 1.5;
 }
 
+/*  */
+
 #contacto > div.gridCol2 > div:first-of-type{
     display: flex;
     flex-direction: column;
